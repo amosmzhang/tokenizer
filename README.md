@@ -8,3 +8,7 @@ Simple go implementation of social media tokenizer.
     
     t := tokenizer.Tokenize("RT: @hello--(world)!")
     // t is [RT @hello -- (world)!]
+
+# TODO
+
+Currently working on returning more informative tokens.
