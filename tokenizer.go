@@ -18,6 +18,7 @@ var (
     reSplits = regexp.MustCompile(` |,|\.|\:|\;|\'`)
 )
 
+// sanitize input text using set of precompiled regex aimed at social media
 func Sanitize(text string) string {
     sanitized := rePhoto.ReplaceAllString(text, "/photo")
     sanitized = reRetweet.ReplaceAllString(sanitized, "$1 ")
@@ -38,6 +39,7 @@ func Sanitize(text string) string {
     return sanitized
 }
 
+// basic splitting of text into tokens
 func Tokenize(text string) []string {
     sanitized := Sanitize(text)
     tokens := reSplits.Split(sanitized, -1)
