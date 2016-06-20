@@ -100,7 +100,7 @@ var raw_emoticons = `
      "judgement": -85
    },
    "angry": {
-     "values": ["D:<", ">:(", "D-:<", ">:-(", ":-@[1]", ";(", ">:O", ">=O", "D<"],
+     "values": ["D:<", ">:(", "D-:<", ">:-(", ":-@[1]", ";(", ">:O", ">=O", "D<", "` + "`" + `_´"],
      "tags": ["angry", "mad"],
      "judgement": -95
    }
@@ -171,7 +171,7 @@ func CheckEmoticon(text string) (EmoticonClass, error) {
         return EmoticonClasses["horror"], nil
     case ":'(", ";*(", "='[":
         return EmoticonClasses["crying"], nil
-    case "D:<", ">:(", "D-:<", ">:-(", ":-@[1]", ";(", ">:O", ">=O", "D<":
+    case "D:<", ">:(", "D-:<", ">:-(", ":-@[1]", ";(", ">:O", ">=O", "D<", "`_´":
         return EmoticonClasses["angry"], nil
     default:
         return e, errors.New("Not found")
