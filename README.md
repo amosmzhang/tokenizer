@@ -6,8 +6,8 @@ Simple go implementation of social media tokenizer.
 
     import "github.com/bottlenose-inc/tokenizer" 
     
-    t := tokenizer.Tokenize("RT: @hello--( world)https://google.com :D")
-    // [{begin_retweet RT <nil>} {user @hello <nil>} {none world) <nil>} {url https://google.com <nil>} {emoticon :D {[:-D :D XD 8D =D =3] [laughing lol big smile big grin] 80}}]
+    t := tokenizer.Tokenize("RT: @hello--( world)https://google.com  `_´ #test")
+    // [{begin_retweet RT <nil> _rt} {user @hello <nil> _user} {part_of_speech world <nil> nn} {url https://google.com <nil> _link} {emoticon `_´ {[D:< >:( D-:< >:-( :-@[1] ;( >:O >=O D< `_´] [angry mad] -95} _emoticon} {hashtag #test <nil> _tag}]
 
 # Token Types
 
